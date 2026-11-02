@@ -1,0 +1,17 @@
+{
+  "title": "Metlabs Regulatory Index",
+  "subtitle": "Crypto and tokenization regulation scores for 122 jurisdictions",
+  "description": "Regulatory assessment of 122 jurisdictions (97 countries and territories, 23 US states and 2 UAE emirates) for businesses that provide crypto-asset services or tokenize assets. Column dictionary and methodology: https://github.com/MetlabsBlockchain/blockchain-regulation-index. Guides: https://metlabs.io/en/blockchain-regulation/. Cite as: Metlabs (2026). Metlabs Regulatory Index [Data set].",
+  "id": "pablogomezgzl/metlabs-regulatory-index",
+  "licenses": [
+    {
+      "name": "Attribution 4.0 International (CC BY 4.0)"
+    }
+  ],
+  "keywords": [
+    "finance",
+    "law",
+    "cryptocurrency",
+    "blockchain"
+  ]
+}

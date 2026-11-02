@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+type: dataset
+title: "Metlabs Regulatory Index"
+abstract: >-
+  Regulatory assessment of 122 jurisdictions (97 countries and territories,
+  23 US states and 2 UAE emirates) for businesses that provide crypto-asset
+  services or tokenize assets: weighted score across five dimensions,
+  authorities, latest regulatory change and review dates.
+authors:
+  - name: "Metlabs"
+    website: "https://metlabs.io/"
+license: CC-BY-4.0
+doi: "10.5281/zenodo.23873539"
+url: "https://metlabs.io/en/blockchain-regulation/"
+repository-code: "https://github.com/MetlabsBlockchain/blockchain-regulation-index"
+keywords:
+  - blockchain regulation
+  - crypto regulation
+  - MiCA
+  - VASP
+  - CASP
+  - tokenization

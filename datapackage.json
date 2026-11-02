@@ -1,0 +1,10 @@
+{
+  "name": "metlabs-regulatory-index",
+  "title": "Metlabs Regulatory Index",
+  "homepage": "https://metlabs.io/en/blockchain-regulation/",
+  "licenses": [{ "name": "CC-BY-4.0", "path": "https://creativecommons.org/licenses/by/4.0/", "title": "Creative Commons Attribution 4.0" }],
+  "sources": [{ "title": "Metlabs", "path": "https://metlabs.io/data/blockchain-regulation-index.csv" }],
+  "resources": [
+    { "name": "blockchain-regulation-index", "path": "data/blockchain-regulation-index.csv", "format": "csv", "mediatype": "text/csv", "encoding": "utf-8" }
+  ]
+}

@@ -1,0 +1,39 @@
+name: Publish mirrors
+
+# Cada mes, si los datos de metlabs.io han cambiado: versión nueva en Zenodo
+# (DOI), sincronización con Hugging Face y Kaggle, y release de GitHub.
+on:
+  schedule:
+    - cron: "41 7 2 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install kaggle six
+      - run: python scripts/publish_mirrors.py
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+          ZENODO_RECORD: "23873540"
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_REPO: Pablogomezgzl/metlabs-regulatory-index
+          KAGGLE_DATASET: pablogomezgzl/metlabs-regulatory-index
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+      - name: GitHub release
+        if: hashFiles('out/published') != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          day=$(cat out/published)
+          gh release create "v${day//-/.}" out/blockchain-regulation-index.csv out/blockchain-regulation-index.json \
+            --title "Metlabs Regulatory Index · ${day}" \
+            --notes "Monthly snapshot from https://metlabs.io/data/. DOI (all versions): https://doi.org/10.5281/zenodo.23873539"
